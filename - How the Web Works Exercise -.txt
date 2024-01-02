@@ -1,0 +1,48 @@
+- How the Web Works Exercise -
+**Part One: Solidify Terminology**
+
+In your own terms, define the following terms:
+
+- What is HTTP?
+Hypertext Transfer Protocol. It's a set of uniform protocols with which to work between servers.
+
+- What is a URL?
+Uniform Resource Locator. It's comprised of the elements that make up the address and specifics for servers to talk to each other.
+
+- What is DNS?
+Domain Name System. Uses complicated systems to make sure servers are working with the correct server. It processes internet communications, sorts through the addresses, quantifies unknowns as much as possible and provides a destination.
+
+- What is a query string?
+The chain of arguments at the end of a URL which include specific requests about the webpage. *Key value pairs*
+
+- What are two HTTP verbs and how are they different?
+Post and Get. Get makes a request which changes nothing on the server. Post makes a request with changes on the server requested.
+
+- What is an HTTP request?
+It is the package sent from one server to another asking for a multitude of elements including: access to that server, a specific port, and specific documents (HTML, CSS, JS, etc.).
+
+- What is an HTTP response?
+Once a server has processed an HTTP request, and answered every element as completely as possible, that server sends back the response package. This could be a simple "404 not found" code or it could be a multitidue of documents such as HTML and CSS, or images and videos, as well as, the elements inside of the documents.
+
+- What is an HTTP header? Give a couple examples of request and response headers you have seen.
+It is the element of the communication package between two servers which outlines everything that is being requested and everything that it responds with. For example a request header would be "Accept-Language: eng", meaning that the english language version is being requested. A response header would be the "successfulness" of the request; code 200 being "ok", everything worked, or 404: "what you have requested is not here". An http response header could also include the last-modified date and time.
+
+- What are the processes that happen when you type “http://somesite.com/some/page.html” into a browser?
+First, the browser searchs local server directories for a match. If it finds none, then it searches within your local network (other router-sharing servers). Then it will provide the URL to the Local [internet] Service Provider to see if that is the destination. Then the LSP will pass that request out into the Internet to the DNS for processing. The DNS catalogs and searchs for a matching destination and connects the requesting server to the responding server. Then the responding server generates it's response and sends it back to the original server/browser.
+	--Answer--:
+	1. Your browser “resolves” the name into an IP address using DNS
+	2. Your browser makes a request to that IP address, including headers (info about browser, any previous 	cookies, and other things)
+	3. The server sends a response (typically, HTML, with a status code (200 if it was sucessful)
+	4. The browser makes a DOM from that HTML, and finds any other resources needed (images, CSS, JavaScript, 	etc)
+	5. The browser makes separate HTTP requests for those resources and receives response from the server for 	each
+
+## ****Part Two: Practice Tools****
+
+1. Using ***curl***, make a ***GET*** request to the *icanhazdadjoke.com* API to find all jokes involving the word “pirate”.
+$ curl https://icanhazdadjoke.com/search?term=pirate
+
+2. Use ***dig*** to find what the IP address is for *icanhazdadjoke.com*
+ 192.168.176.1#53
+
+3. Make a simple web page and serve it using ***python3 -m http.server***. Visit the page in a browser.
+Memory Game
